@@ -1,0 +1,5 @@
+,pred_Fertility,pred_Follicular,pred_Luteal,pred_Menstrual
+true_Fertility,210,37,5,0
+true_Follicular,0,332,4,34
+true_Luteal,39,1,361,1
+true_Menstrual,1,4,34,172

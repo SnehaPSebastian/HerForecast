@@ -1,0 +1,38 @@
+{
+  "row_count": 5658,
+  "phase_distribution": {
+    "Luteal": 1912,
+    "Follicular": 1386,
+    "Fertility": 1281,
+    "Menstrual": 1079
+  },
+  "comparison_file": "C:\\Users\\Sthavitha Rithu LNS\\OneDrive\\Desktop\\WOMEN DATA\\phase_history_vs_current_comparison.csv",
+  "best_per_mode": [
+    {
+      "mode": "current_only_no_history",
+      "model_name": "logistic_regression",
+      "feature_count": 46,
+      "cv_accuracy": 0.4852354646864166,
+      "cv_balanced_accuracy": 0.48504868704059945,
+      "cv_f1_macro": 0.475367226454944,
+      "test_accuracy": 0.4817813765182186,
+      "test_balanced_accuracy": 0.49667235470800586,
+      "test_f1_macro": 0.48211908828317895
+    },
+    {
+      "mode": "with_history_features",
+      "model_name": "extra_trees",
+      "feature_count": 95,
+      "cv_accuracy": 0.8653013809857901,
+      "cv_balanced_accuracy": 0.8582510379079249,
+      "cv_f1_macro": 0.8588290401755276,
+      "test_accuracy": 0.8704453441295547,
+      "test_balanced_accuracy": 0.8609516144141596,
+      "test_f1_macro": 0.861968662406977
+    }
+  ],
+  "notes": [
+    "Both modes use the exact same grouped train/test split.",
+    "This isolates impact of history features on phase prediction quality."
+  ]
+}

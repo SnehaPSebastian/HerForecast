@@ -1,0 +1,4 @@
+model_name,selected_candidate,cv_accuracy,cv_balanced_accuracy,cv_f1_macro,test_accuracy,test_balanced_accuracy,test_f1_macro
+random_forest,rf_c,1.0,1.0,1.0,1.0,1.0,1.0
+extra_trees,et_a,0.9997767857142857,0.9993243243243242,0.999562016587457,1.0,1.0,1.0
+logistic_regression,c_0.5,0.9995535714285715,0.9991305258747119,0.9990584251437754,0.9991071428571429,0.9992447129909365,0.9989757903419375

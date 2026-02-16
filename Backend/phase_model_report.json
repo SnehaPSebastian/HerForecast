@@ -1,0 +1,105 @@
+{
+  "data_shape_with_label": [
+    5600,
+    9
+  ],
+  "phase_distribution": {
+    "Luteal": 2600,
+    "Follicular": 1600,
+    "Menstrual": 1000,
+    "Fertility": 400
+  },
+  "feature_strategy": "full_history",
+  "selected_feature_count": 8,
+  "hormone_feature_count": 2,
+  "numeric_feature_count": 8,
+  "categorical_feature_count": 0,
+  "cv_summary": {
+    "logistic_regression": {
+      "cv_accuracy": 0.9995535714285715,
+      "cv_balanced_accuracy": 0.9991305258747119,
+      "cv_f1_macro": 0.9990584251437754
+    },
+    "random_forest": {
+      "cv_accuracy": 1.0,
+      "cv_balanced_accuracy": 1.0,
+      "cv_f1_macro": 1.0
+    },
+    "extra_trees": {
+      "cv_accuracy": 0.9997767857142857,
+      "cv_balanced_accuracy": 0.9993243243243242,
+      "cv_f1_macro": 0.999562016587457
+    }
+  },
+  "test_summary": {
+    "logistic_regression": {
+      "accuracy": 0.9991071428571429,
+      "balanced_accuracy": 0.9992447129909365,
+      "f1_macro": 0.9989757903419375
+    },
+    "random_forest": {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "f1_macro": 1.0
+    },
+    "extra_trees": {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "f1_macro": 1.0
+    }
+  },
+  "selected_model": "random_forest",
+  "classification_report": {
+    "Fertility": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 66.0
+    },
+    "Follicular": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 331.0
+    },
+    "Luteal": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 530.0
+    },
+    "Menstrual": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 193.0
+    },
+    "accuracy": 1.0,
+    "macro avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1120.0
+    },
+    "weighted avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1120.0
+    }
+  },
+  "paths": {
+    "phase_predictions": "C:\\Users\\sivak\\OneDrive\\Desktop\\final synth\\Backend\\phase_predictions.csv",
+    "phase_confusion_matrix": "C:\\Users\\sivak\\OneDrive\\Desktop\\final synth\\Backend\\phase_confusion_matrix.csv",
+    "phase_feature_correlation": "C:\\Users\\sivak\\OneDrive\\Desktop\\final synth\\Backend\\phase_feature_correlation.csv",
+    "phase_model_artifact": "C:\\Users\\sivak\\OneDrive\\Desktop\\final synth\\Backend\\phase_prediction_model.joblib",
+    "phase_model_comparison": "C:\\Users\\sivak\\OneDrive\\Desktop\\final synth\\Backend\\phase_model_comparison.csv",
+    "phase_model_tuning_cv": "C:\\Users\\sivak\\OneDrive\\Desktop\\final synth\\Backend\\phase_model_tuning_cv.csv"
+  },
+  "notes": [
+    "Label is menstrual phase from merged_women_data.csv",
+    "Correlation table uses mutual information with preprocessed features",
+    "Split is participant-grouped to reduce leakage",
+    "Per-model candidate tuning was performed using GroupKFold on train participants."
+  ]
+}

@@ -1,0 +1,350 @@
+/* ============================================
+   Inner Weather — Design System
+   ============================================ */
+
+/* --- CSS Custom Properties --- */
+:root {
+  /* Palette */
+  --lavender: #D8C7FF;
+  --blush: #F8C8DC;
+  --peach: #FFD6B0;
+  --sky-blue: #BEE3F8;
+  --warm-white: #FFF9F5;
+  --soft-cream: #FFF5EE;
+  --lavender-mist: #EDE4FF;
+  --text-primary: #4A3D6B;
+  --text-secondary: #7B6E99;
+  --text-light: #A89CC8;
+  --glass-bg: rgba(255, 255, 255, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --glass-shadow: rgba(180, 160, 220, 0.15);
+
+  /* Typography */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Borders */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-xl: 36px;
+  --radius-full: 9999px;
+}
+
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: var(--warm-white);
+  min-height: 100vh;
+  overflow: hidden;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+}
+
+#root {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* --- Typography --- */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+}
+
+/* --- Glassmorphism Card --- */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow:
+    0 4px 24px var(--glass-shadow),
+    0 1px 4px rgba(255, 255, 255, 0.3) inset;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.4s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 8px 32px rgba(180, 160, 220, 0.22),
+    0 1px 4px rgba(255, 255, 255, 0.4) inset;
+}
+
+/* --- Keyframe Animations --- */
+@keyframes breathe {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes drift-right {
+  0% {
+    transform: translateX(-10px);
+  }
+
+  50% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes drift-up {
+  0% {
+    transform: translateY(100vh) scale(0.5);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.7;
+  }
+
+  90% {
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateY(-20px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes sparkle {
+
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 8px rgba(216, 199, 255, 0.3));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 20px rgba(216, 199, 255, 0.6));
+  }
+}
+
+@keyframes gentle-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes horizon-glow {
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes wave {
+
+  0%,
+  100% {
+    d: path('M0,40 Q60,20 120,40 T240,40 T360,40 T480,40 V80 H0 Z');
+  }
+
+  50% {
+    d: path('M0,35 Q60,50 120,35 T240,35 T360,35 T480,35 V80 H0 Z');
+  }
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--lavender);
+  border-radius: var(--radius-full);
+}
+
+/* --- Selection --- */
+::selection {
+  background: var(--lavender);
+  color: var(--text-primary);
+}
+
+/* --- Responsive: Tablet (768px+) --- */
+@media (min-width: 768px) {
+  #inner-root {
+    max-width: 720px;
+    padding-left: var(--space-xl);
+    padding-right: var(--space-xl);
+  }
+
+  h1 {
+    font-size: 2.5rem !important;
+  }
+
+  .glass-card {
+    padding: var(--space-xl);
+  }
+
+  .insights-grid {
+    gap: var(--space-lg);
+  }
+}
+
+/* --- Responsive: Desktop (1024px+) --- */
+@media (min-width: 1024px) {
+  #inner-root {
+    max-width: 860px;
+    padding-left: var(--space-2xl);
+    padding-right: var(--space-2xl);
+  }
+
+  h1 {
+    font-size: 2.8rem !important;
+  }
+
+  .insights-grid {
+    gap: var(--space-xl);
+  }
+
+  .forecast-horizon {
+    height: 100px;
+  }
+}
+
+/* --- Responsive: Large Desktop (1440px+) --- */
+@media (min-width: 1440px) {
+  #inner-root {
+    max-width: 960px;
+  }
+}
+
+/* --- Responsive: Mobile (max 767px) --- */
+@media (max-width: 767px) {
+  body {
+    font-size: 14px; /* Smaller base font size for mobile readability */
+  }
+
+  #inner-root {
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+  }
+
+  h1 {
+    font-size: 2rem; /* Adjusted heading size for mobile */
+  }
+
+  .glass-card {
+    padding: var(--space-md);
+    margin: var(--space-sm) 0; /* Add vertical margins for better spacing */
+  }
+
+  .insights-grid {
+    gap: var(--space-sm);
+    grid-template-columns: 1fr; /* Single column on mobile for better layout */
+  }
+
+  /* Additional mobile optimizations */
+  .bottom-nav {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .weather-icon {
+    width: 80px; /* Smaller icons on mobile */
+    height: 80px;
+  }
+
+  .insights-grid {
+    flex-direction: column !important;
+    gap: var(--space-sm) !important;
+  }
+
+  .glass-card {
+    text-align: center !important;
+  }
+}
